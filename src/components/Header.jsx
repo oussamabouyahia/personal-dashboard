@@ -7,7 +7,7 @@ const Header = () => {
             Personal Dashboard Created By Oussama
           </h1>
           <p className="text-gray-600">
-            Track your productivity, expenses, and habits
+            Track your productivity, expenses and habits
           </p>
         </div>
   )
