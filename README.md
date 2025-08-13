@@ -1,4 +1,7 @@
 # React + Vite
+this is a small react app for a personal dashboard , shows clearly a separation of concerns, I tried to separate logic(via hooks) from UI and use components UI folder and another folder for hooks.
+the app is responsive and to adapt with different viewports using tailwind.
+for data visualization I used recharts.
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
