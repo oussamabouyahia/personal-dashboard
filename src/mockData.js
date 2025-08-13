@@ -1,7 +1,7 @@
 export const mockTasks = [
-  { id: 1, title: "Review project proposals", completed: true, priority: "high", dueDate: "2025-08-13" },
-  { id: 2, title: "Update portfolio website", completed: false, priority: "medium", dueDate: "2025-08-15" },
-  { id: 3, title: "Learn React Server Components", completed: false, priority: "low", dueDate: "2025-08-20" }
+  { id: 1, title: "Review project proposals", completed: true, priority: "medium", dueDate: "2025-08-13" },
+  { id: 2, title: "use domain driven architecture", completed: false, priority: "high", dueDate: "2025-08-15" },
+  { id: 3, title: "legacy from Vue to React", completed: false, priority: "low", dueDate: "2025-08-20" }
 ];
 
 export const mockExpenses = [
@@ -11,8 +11,8 @@ export const mockExpenses = [
 ];
 
 export const mockHabits = [
-  { id: 1, name: "Exercise", streak: 5, target: 7, completed: true },
-  { id: 2, name: "Reading", streak: 3, target: 7, completed: false },
+  { id: 1, name: "Refactore code", streak: 5, target: 7, completed: true },
+  { id: 2, name: "Reading from Medium", streak: 3, target: 7, completed: false },
   { id: 3, name: "Coding Practice", streak: 12, target: 7, completed: true }
 ];
 export const weeklyData = [
