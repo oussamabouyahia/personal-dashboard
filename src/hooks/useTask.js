@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState ,useMemo} from "react";
 import { mockTasks} from "../mockData"
 
 
@@ -21,13 +21,18 @@ const addTask = () => {
     }
   };
    const toggleTask = (id) => {
-    setTasks(
-      tasks.map((task) =>
+    setTasks(prev=>
+      prev.map((task) =>
         task.id === id ? { ...task, completed: !task.completed } : task
       )
     );
+    
   };
+  const completedTasks = useMemo(
+    () => tasks.filter(t => t.completed).length,
+    [tasks]
+  );
 
-return {tasks,setTasks,showAddTask,setShowAddTask,addTask,toggleTask}
+return {tasks,setTasks,showAddTask,setShowAddTask,addTask,toggleTask,completedTasks}
 
 }

@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import "./App.css";
 // Mock data - replace with Laravel API calls
-import { mockExpenses, mockHabits, weeklyData } from "./mockData";
+import { weeklyData } from "./mockData";
 
 import Tasks from "./components/Tasks";
 import StatsCards from "./components/StatsCards";
@@ -11,39 +11,16 @@ import Header from "./components/Header";
 import Expenses from "./components/Expenses";
 import Chart from "./components/Chart";
 import useTask from "./hooks/useTask";
+import useStats from "./hooks/useStats";
 export default function App() {
-  const [expenses, setExpenses] = useState(mockExpenses);
-  const [habits, setHabits] = useState(mockHabits);
+  
   const [newTask, setNewTask] = useState("");
 
-  const { tasks, setTasks, showAddTask, setShowAddTask, addTask, toggleTask } =
+  const { tasks, showAddTask, setShowAddTask, addTask, toggleTask ,completedTasks} =
     useTask(newTask, setNewTask);
   // Calculate stats
-  const completedTasks = tasks.filter((task) => task.completed).length;
-  const totalExpenses = expenses.reduce(
-    (sum, expense) => sum + expense.amount,
-    0
-  );
-  const avgHabitStreak = Math.round(
-    habits.reduce((sum, habit) => sum + habit.streak, 0) / habits.length
-  );
-
-  const toggleHabit = (id) => {
-    setHabits(
-      habits.map((habit) =>
-        habit.id === id
-          ? {
-              ...habit,
-              completed: !habit.completed,
-              streak: !habit.completed
-                ? habit.streak + 1
-                : Math.max(0, habit.streak - 1),
-            }
-          : habit
-      )
-    );
-  };
-
+  const {expenses,habits,totalExpenses,avgHabitStreak,toggleHabit}=useStats()
+  
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-6">
       <div className="max-w-7xl mx-auto">
