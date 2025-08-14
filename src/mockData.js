@@ -5,8 +5,8 @@ export const mockTasks = [
 ];
 
 export const mockExpenses = [
-  { id: 1, category: "Food", amount: 45.50, date: "2025-08-13" },
-  { id: 2, category: "Transport", amount: 12.00, date: "2025-08-13" },
+  { id: 1, category: "Food", amount: 45.50, date: "2025-01-01" },
+  { id: 2, category: "Transport", amount: 12.00, date: "2024-05-13" },
   { id: 3, category: "Software", amount: 29.99, date: "2025-08-12" }
 ];
 

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { CheckCircle,Activity } from 'lucide-react'
 const Habits = ({habits,toggleHabit}) => {
   return (

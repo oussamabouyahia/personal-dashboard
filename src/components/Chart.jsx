@@ -1,4 +1,4 @@
-import React from 'react'
+
 import {
   LineChart,
   Line,
@@ -7,8 +7,6 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
-  BarChart,
-  Bar,
 } from "recharts";
 const Chart = ({weeklyData}) => {
   return (
