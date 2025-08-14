@@ -13,14 +13,26 @@ import Chart from "./components/Chart";
 import useTask from "./hooks/useTask";
 import useStats from "./hooks/useStats";
 export default function App() {
-  
   const [newTask, setNewTask] = useState("");
 
-  const { tasks, showAddTask, setShowAddTask, addTask, toggleTask ,completedTasks} =
-    useTask(newTask, setNewTask);
+  const {
+    tasks,
+    showAddTask,
+    setShowAddTask,
+    addTask,
+    toggleTask,
+    completedTasks,
+  } = useTask(newTask, setNewTask);
   // Calculate stats
-  const {expenses,habits,totalExpenses,avgHabitStreak,toggleHabit}=useStats()
-  
+  const {
+    expenses,
+    habits,
+    totalExpenses,
+    avgHabitStreak,
+    toggleHabit,
+    addExpense,
+  } = useStats();
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-6">
       <div className="max-w-7xl mx-auto">
@@ -57,7 +69,7 @@ export default function App() {
             <Habits habits={habits} toggleHabit={toggleHabit} />
 
             {/* Recent Expenses */}
-            <Expenses expenses={expenses} />
+            <Expenses expenses={expenses} onAddExpense={addExpense} />
           </div>
         </div>
       </div>
