@@ -22,6 +22,7 @@ export default function App() {
     addTask,
     toggleTask,
     completedTasks,
+    handlePriority,
   } = useTask(newTask, setNewTask);
   // Calculate stats
   const {
@@ -57,6 +58,7 @@ export default function App() {
               newTask={newTask}
               addTask={addTask}
               setNewTask={setNewTask}
+              handlePriority={handlePriority}
             />
 
             {/* Charts */}

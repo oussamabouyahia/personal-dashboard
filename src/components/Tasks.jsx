@@ -9,6 +9,7 @@ const Tasks = ({
   addTask,
   newTask,
   setNewTask,
+  handlePriority,
 }) => {
   return (
     <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100 mb-6">
@@ -37,7 +38,11 @@ const Tasks = ({
             key={task.id}
             className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg"
           >
-            <OneTask task={task} toggleTask={toggleTask} />
+            <OneTask
+              task={task}
+              toggleTask={toggleTask}
+              handlePriority={handlePriority}
+            />
           </div>
         ))}
       </div>
